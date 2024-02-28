@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DwFbbQX30c9AysZFXezoz5h1TM26myuWiCM60iEcT7SnyYUuKao+AUPFBLfLGqnmz9dRutp5r8H6LkXCLBY6lg==",
+  "dgSpecHash": "gUvtCV8IXPz3xzUyC6KjZwvJbdJKB1PNv8S36qe7rT07dirlvwoQAuZtnUMp2VAKP6+2LudKm6jahBjCXo/pkw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\root\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\efcore.namingconventions\\8.0.3\\efcore.namingconventions.8.0.3.nupkg.sha512",

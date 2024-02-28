@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj": {}
+    "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj": {
+    "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj",
+        "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\root\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\obj\\",
+        "outputPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\root\\AppData\\Roaming\\NuGet\\NuGet.Config",

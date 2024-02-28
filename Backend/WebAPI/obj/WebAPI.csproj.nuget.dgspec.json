@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\WebAPI\\WebAPI.csproj": {}
+    "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Business\\Business.csproj": {
+    "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Business\\Business.csproj",
+        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Business\\Business.csproj",
+        "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\root\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Business\\obj\\",
+        "outputPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\root\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj"
+              "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DataAccess.csproj": {
+    "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DataAccess.csproj",
+        "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\root\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\obj\\",
+        "outputPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\root\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -98,11 +98,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Business\\Business.csproj": {
-                "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Business\\Business.csproj"
+              "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Business.csproj": {
+                "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Business.csproj"
               },
-              "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj"
+              "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj"
               }
             }
           }
@@ -181,14 +181,14 @@
         }
       }
     },
-    "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj": {
+    "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj",
+        "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\root\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\obj\\",
+        "outputPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\root\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -252,14 +252,14 @@
         }
       }
     },
-    "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\WebAPI\\WebAPI.csproj": {
+    "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\WebAPI\\WebAPI.csproj",
+        "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\root\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\WebAPI\\obj\\",
+        "outputPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\root\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -276,8 +276,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DataAccess.csproj"
+              "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\DataAccess.csproj"
               }
             }
           }

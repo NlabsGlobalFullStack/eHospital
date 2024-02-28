@@ -3244,11 +3244,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DataAccess.csproj",
+      "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\root\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\DataAccess\\obj\\",
+      "outputPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\root\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3265,11 +3265,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Business\\Business.csproj": {
-              "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Business\\Business.csproj"
+            "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Business.csproj": {
+              "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Business.csproj"
             },
-            "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj": {
-              "projectPath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj"
+            "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj"
             }
           }
         }

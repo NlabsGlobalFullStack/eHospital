@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ij5d5Hxf4ADDH4wNfp0DHyHqsFbOtBR/y5YJzXiNP8TuvaKRP5Bk1vvwanrxB+LIXTOmYt3OEEmaJtOSLbfkhQ==",
+  "dgSpecHash": "UTNbc5kUoSFXXg0Spyb2+Ned1PGTO+3QnoIGPH97c52ezNMz5hn3hINpGJpwcGAbGJYVU0RZoiq5VmlPsd+Kkw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\FullStack\\eHospital\\HospitalInformationManagementSystem\\Backend\\Entities\\Entities.csproj",
+  "projectFilePath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\root\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
