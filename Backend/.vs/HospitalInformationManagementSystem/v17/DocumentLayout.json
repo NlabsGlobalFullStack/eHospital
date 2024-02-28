@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|d:\\projects\\fullstack\\hospitalinformationmanagementsystem\\backend\\dataaccess\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85350BE0-9281-437C-A5F2-335AC0DBC151}|WebAPI\\WebAPI.csproj|d:\\projects\\fullstack\\hospitalinformationmanagementsystem\\backend\\webapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85350BE0-9281-437C-A5F2-335AC0DBC151}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85350BE0-9281-437C-A5F2-335AC0DBC151}|WebAPI\\WebAPI.csproj|d:\\projects\\fullstack\\hospitalinformationmanagementsystem\\backend\\webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85350BE0-9281-437C-A5F2-335AC0DBC151}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|d:\\projects\\fullstack\\hospitalinformationmanagementsystem\\backend\\dataaccess\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|d:\\projects\\fullstack\\hospitalinformationmanagementsystem\\backend\\dataaccess\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 186,
+          "SelectedChildIndex": 14,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\WebAPI\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\WebAPI\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T19:40:56.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\WebAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\WebAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T19:39:20.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\DataAccess\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Mapping\\MappingProfile.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\DataAccess\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "DataAccess\\Mapping\\MappingProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T19:35:52.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "DataAccess\\DependencyInjection.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\DataAccess\\DependencyInjection.cs",
+              "RelativeToolTip": "DataAccess\\DependencyInjection.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAIwBEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T19:34:33.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\DataAccess\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Services\\UserService.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\HospitalInformationManagementSystem\\Backend\\DataAccess\\Services\\UserService.cs",
+              "RelativeToolTip": "DataAccess\\Services\\UserService.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAgwE4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T18:39:52.9Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 186,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

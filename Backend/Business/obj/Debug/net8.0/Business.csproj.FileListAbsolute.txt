@@ -1,0 +1,15 @@
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\bin\Debug\net8.0\Business.deps.json
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\bin\Debug\net8.0\Business.dll
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\bin\Debug\net8.0\Business.pdb
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\bin\Debug\net8.0\Entities.dll
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\bin\Debug\net8.0\Entities.pdb
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\Business.csproj.Up2Date
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\Business.dll
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\refint\Business.dll
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\Business.pdb
+D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Business\obj\Debug\net8.0\ref\Business.dll
