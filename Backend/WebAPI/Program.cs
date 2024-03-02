@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using DataAccess;
 using WebAPI.Middlewares;
 
@@ -30,6 +31,10 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers()
-    .RequireAuthorization();
+    .RequireAuthorization(policy =>
+    {
+        policy.RequireClaim(ClaimTypes.NameIdentifier);
+        policy.AddAuthenticationSchemes("Bearer");
+    });
 
 app.Run();

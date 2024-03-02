@@ -3,6 +3,7 @@ using Business.Services;
 using Entities.DTOs;
 using Entities.Enums;
 using Entities.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TS.Result;
@@ -17,7 +18,7 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
             var isEmailExists = await userManager.Users.AnyAsync(u => u.Email == request.Email);
             if (isEmailExists)
             {
-                return Result<string>.Failure(500, "Email already has taken");
+                return Result<string>.Failure(StatusCodes.Status409Conflict, "Email already has taken");
             }
         }
 
@@ -26,7 +27,7 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
             var isUserNameExists = await userManager.Users.AnyAsync(u => u.UserName == request.UserName);
             if (isUserNameExists)
             {
-                return Result<string>.Failure(500, "UserName already has taken");
+                return Result<string>.Failure(StatusCodes.Status409Conflict, "UserName already has taken");
             }
         }
 
@@ -35,7 +36,7 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
             bool identityNumberExists = await userManager.Users.AnyAsync(u => u.IdentityNumber == request.IdentityNumber);
             if (identityNumberExists)
             {
-                return Result<string>.Failure(500, "IdentityNumber number already exists");
+                return Result<string>.Failure(StatusCodes.Status409Conflict, "IdentityNumber number already exists");
             }
         }
 
@@ -43,15 +44,26 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
 
         Random random = new();
 
-        user.EmailConfirmCode = random.Next(100000, 999999);
-
-        if (request.UserType == UserType.Doctor)
+        var isEmailConfirmCodeExists = true;
+        while (isEmailConfirmCodeExists)
         {
-            if (request.Specialty is not null)
+            user.EmailConfirmCode = random.Next(100000, 999999);
+
+            if (!userManager.Users.Any(u => u.EmailConfirmCode == user.EmailConfirmCode))
+            {
+                isEmailConfirmCodeExists = true;
+            }
+            
+        }
+
+        if (request.Specialty is not null)
+        {
+            //eger kullanıcı tipi doktor ise doktor detail kısmında grekli kayıt işlemlerini yapıyoruz ilerleyen zamanlarda başka kontroller gerekebilir diye generic yapabilirim bu kısmı
+            if (request.UserType == UserType.Doctor)
             {
                 user.DoctorDetail = new DoctorDetail()
                 {
-                    UserId = user.Id,
+                    //UserId = user.Id,
                     Specialty = (Specialty)request.Specialty,
                     WorkingDays = request.WorkingDays ?? new()
                 };
@@ -73,6 +85,6 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
             return Result<string>.Succeed("User create is successfull");
         }
 
-        return (200, "User created action successfully");
+        return Result<string>.Failure(500, result.Errors.Select(s => s.Description).ToList());
     }
 }

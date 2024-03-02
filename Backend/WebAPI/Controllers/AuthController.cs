@@ -15,4 +15,31 @@ public class AuthController(IAuthService authService) : ApiController
 
         return StatusCode(response.StatusCode, response);
     }
+
+    [HttpGet]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetTokenByRefreshToken(string refreshToken, CancellationToken cancellationToken)
+    {
+        var response = await authService.GetTokenByRefreshTokenAsync(refreshToken, cancellationToken);
+
+        return StatusCode(response.StatusCode, response);
+    }
+
+    [HttpGet]
+    [AllowAnonymous]
+    public async Task<IActionResult> SendConfirmMail(string mail, CancellationToken cancellationToken)
+    {
+        var response = await authService.GetTokenByRefreshTokenAsync(mail, cancellationToken);
+
+        return StatusCode(response.StatusCode, response);
+    }
+
+    [HttpGet]
+    [AllowAnonymous]
+    public async Task<IActionResult> ConfirmMail(int emailConfirmCode, CancellationToken cancellationToken)
+    {
+        var response = await authService.ConfirmVerificationEmail(emailConfirmCode, cancellationToken);
+
+        return StatusCode(response.StatusCode, response);
+    }
 }

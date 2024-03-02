@@ -20,7 +20,7 @@ public class JwtProvider(UserManager<AppUser> userManager, IOptions<JwtOptions> 
             new Claim(ClaimTypes.Email, user.Email ?? ""),
             new Claim("UserName", user.UserName ?? ""),
         };
-
+        //single line if else ile tek satırda çözdük beni hatırla true yada false ise diyerek işlemlerimizi yaptık
         var expires = rememberMe ? DateTime.UtcNow.AddMonths(1) : DateTime.UtcNow.AddHours(1);
 
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.Value.SecretKey));

@@ -13,6 +13,7 @@ public sealed class UsersController(IUserService userService) : ApiController
     public async Task<IActionResult> Create(RegisterRequestDto request, CancellationToken cancellationToken)
     {
         var response = await userService.CreateUserAsync(request, cancellationToken);
+
         return StatusCode(200,request);
     }
 }
