@@ -3,6 +3,7 @@ using DataAccess.Context;
 using DataAccess.Options;
 using DataAccess.Services;
 using Entities.Models;
+using Entities.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,8 @@ public static class DependencyInjection
                 .UseSnakeCaseNamingConvention();
         });
 
+        services.AddScoped<IUnitOfWork>(srv => srv.GetRequiredService<AppDbContext>());
+
         services
             .AddIdentity<AppUser, IdentityRole<Guid>>(cfr =>
             {
@@ -41,16 +44,13 @@ public static class DependencyInjection
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-        //services.ConfigureOptions<JwtOptionsSetup>();
         services.Configure<JwtOptions>(configuration.GetSection("Jwt"));
-        //var jwt = services.BuildServiceProvider().GetRequiredService<IOptions<JwtOptions>>();
+
         services.ConfigureOptions<JwtTokenOptionsSetup>();
 
         services.AddAuthentication()
             .AddJwtBearer();
         services.AddAuthorizationBuilder();
-
-        //services.AddAuthorization();
 
         services.AddScoped<JwtProvider>();
 

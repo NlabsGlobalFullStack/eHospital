@@ -55,7 +55,7 @@
             },
             "TS.Result": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             }
           },
           "imports": [
@@ -162,7 +162,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[7.3.1, )"
+              "version": "[7.4.0, )"
             }
           },
           "imports": [
@@ -227,6 +227,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EntityFrameworkCore.GenericRepository.Nuget": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.2.0, )"

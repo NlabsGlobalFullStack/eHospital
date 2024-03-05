@@ -2,5 +2,5 @@
 public sealed record LoginRequestDto(
     string UserNameOrEmail,
     string Password,
-    bool rememberMe
+    bool rememberMe = false
 );

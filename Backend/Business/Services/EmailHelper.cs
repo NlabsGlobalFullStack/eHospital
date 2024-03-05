@@ -1,4 +1,5 @@
-﻿using GenericEmailService;
+﻿using Business.Constans;
+using GenericEmailService;
 
 namespace Business.Services;
 public static class EmailHelper
@@ -6,11 +7,11 @@ public static class EmailHelper
     public static async Task<string> SendEmailAsync(string email, string subject, string body)
     {
         EmailConfigurations emailConfigurations = new(
-                "smtp.office365.com",
-                "Parola1!",
-                587,
-                false,
-                true);
+                EmailConstants.Smtp,
+                EmailConstants.Password,
+                EmailConstants.Port,
+                EmailConstants.SSL,
+                EmailConstants.Html);
 
         EmailModel<Stream> emailModel = new(
             emailConfigurations,

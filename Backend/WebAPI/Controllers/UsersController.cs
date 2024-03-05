@@ -14,6 +14,6 @@ public sealed class UsersController(IUserService userService) : ApiController
     {
         var response = await userService.CreateUserAsync(request, cancellationToken);
 
-        return StatusCode(200,request);
+        return StatusCode(response.StatusCode, response);
     }
 }

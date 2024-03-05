@@ -10,3 +10,16 @@ D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Entities\obj\D
 D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Entities\obj\Debug\net8.0\refint\Entities.dll
 D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Entities\obj\Debug\net8.0\Entities.pdb
 D:\Projects\FullStack\HospitalInformationManagementSystem\Backend\Entities\obj\Debug\net8.0\ref\Entities.dll
+D:\Projects\FullStack\eHospital\Backend\Entities\bin\Debug\net8.0\Entities.deps.json
+D:\Projects\FullStack\eHospital\Backend\Entities\bin\Debug\net8.0\Entities.dll
+D:\Projects\FullStack\eHospital\Backend\Entities\bin\Debug\net8.0\Entities.pdb
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\Entities.AssemblyInfoInputs.cache
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\Entities.AssemblyInfo.cs
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\Entities.csproj.CoreCompileInputs.cache
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\Entities.sourcelink.json
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\Entities.dll
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\refint\Entities.dll
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\Entities.pdb
+D:\Projects\FullStack\eHospital\Backend\Entities\obj\Debug\net8.0\ref\Entities.dll

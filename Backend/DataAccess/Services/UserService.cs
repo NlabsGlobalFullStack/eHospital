@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Business.Services;
+using DataAccess.Extensions;
 using Entities.DTOs;
 using Entities.Enums;
 using Entities.Models;
@@ -11,6 +12,7 @@ using TS.Result;
 namespace DataAccess.Services;
 internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapper) : IUserService
 {
+
     public async Task<Result<string>> CreateUserAsync(RegisterRequestDto request, CancellationToken cancellationToken)
     {
         if (request.Email is not null)
@@ -52,8 +54,7 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
             if (!userManager.Users.Any(u => u.EmailConfirmCode == user.EmailConfirmCode))
             {
                 isEmailConfirmCodeExists = true;
-            }
-            
+            }            
         }
 
         if (request.Specialty is not null)
@@ -63,7 +64,6 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
             {
                 user.DoctorDetail = new DoctorDetail()
                 {
-                    //UserId = user.Id,
                     Specialty = (Specialty)request.Specialty,
                     WorkingDays = request.WorkingDays ?? new()
                 };
@@ -87,4 +87,39 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
 
         return Result<string>.Failure(500, result.Errors.Select(s => s.Description).ToList());
     }
+
+    public async Task<Result<string>> CreatePatientAsync(CreatePatientDto request, CancellationToken cancellationToken)
+    {
+        var user = await FindPatientWithIdentityNumberAsync(request.IdentityNumber, cancellationToken);
+        if (user is null)
+        {
+            return Result<string>.Failure("IdentityNumber Not Found");
+        }
+
+        if (request.IdentityNumber != "11111111111")
+        {
+            var identityNumberExists = await userManager.Users.AnyAsync(u => u.IdentityNumber == request.IdentityNumber);
+            if (identityNumberExists)
+            {
+                return Result<string>.Failure(StatusCodes.Status409Conflict, "IdentityNumber number already exists");
+            }
+        }
+
+        var result = mapper.Map<AppUser>(user);
+
+        return ("Patient creation successfull");
+    }
+
+    public async Task<Result<AppUser>> FindPatientWithIdentityNumberAsync(string identityNumber, CancellationToken cancellationToken)
+    {
+        var user = await userManager.FindByIdentityNumber(identityNumber, cancellationToken);
+        if (user is null)
+        {
+            return Result<AppUser>.Failure(500, "Oser not found!");
+        }
+
+        return user;
+    }
 }
+
+

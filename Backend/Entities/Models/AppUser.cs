@@ -17,6 +17,9 @@ public sealed class AppUser : IdentityUser<Guid>
     public int EmailConfirmCode { get; set; }
     public DateTime EmailConfirmCodeSendDate { get; set; }
 
+    public int? ForgotPasswordCode { get; set; }
+    public DateTime? ForgotPasswordCodeSendDate { get; set; }
+
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenExpires { get; set; }
 

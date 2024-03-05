@@ -71,6 +71,14 @@ namespace DataAccess.Migrations
                         .HasColumnType("text")
                         .HasColumnName("first_name");
 
+                    b.Property<int?>("ForgotPasswordCode")
+                        .HasColumnType("integer")
+                        .HasColumnName("forgot_password_code");
+
+                    b.Property<DateTime?>("ForgotPasswordCodeSendDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("forgot_password_code_send_date");
+
                     b.Property<string>("FullAddress")
                         .IsRequired()
                         .HasColumnType("text")
@@ -152,7 +160,59 @@ namespace DataAccess.Migrations
                     b.HasIndex("DoctorDetailId")
                         .HasDatabaseName("ix_users_doctor_detail_id");
 
+                    b.HasIndex("EmailConfirmCode")
+                        .IsUnique()
+                        .HasDatabaseName("ix_users_email_confirm_code");
+
                     b.ToTable("users", (string)null);
+                });
+
+            modelBuilder.Entity("Entities.Models.Appointment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<Guid>("DoctorId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("doctor_id");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("end_date");
+
+                    b.Property<string>("EpicrisisReport")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("epicrisis_report");
+
+                    b.Property<bool>("IsItFinished")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_it_finished");
+
+                    b.Property<Guid>("PatientId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("patient_id");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("money")
+                        .HasColumnName("price");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("start_date");
+
+                    b.HasKey("Id")
+                        .HasName("pk_appointments");
+
+                    b.HasIndex("DoctorId")
+                        .HasDatabaseName("ix_appointments_doctor_id");
+
+                    b.HasIndex("PatientId")
+                        .HasDatabaseName("ix_appointments_patient_id");
+
+                    b.ToTable("appointments", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Models.DoctorDetail", b =>
@@ -161,6 +221,10 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("user_id");
+
+                    b.Property<decimal>("AppointmentPrice")
+                        .HasColumnType("money")
+                        .HasColumnName("appointment_price");
 
                     b.Property<int>("Specialty")
                         .HasColumnType("integer")
@@ -210,6 +274,27 @@ namespace DataAccess.Migrations
                         .HasConstraintName("fk_users_doctor_details_doctor_detail_id");
 
                     b.Navigation("DoctorDetail");
+                });
+
+            modelBuilder.Entity("Entities.Models.Appointment", b =>
+                {
+                    b.HasOne("Entities.Models.AppUser", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_appointments_users_doctor_id");
+
+                    b.HasOne("Entities.Models.AppUser", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_appointments_users_patient_id");
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
                 });
 #pragma warning restore 612, 618
         }

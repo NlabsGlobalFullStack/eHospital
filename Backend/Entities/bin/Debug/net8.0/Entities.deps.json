@@ -8,11 +8,23 @@
     ".NETCoreApp,Version=v8.0": {
       "Entities/1.0.0": {
         "dependencies": {
+          "EntityFrameworkCore.GenericRepository.Nuget": "8.0.1",
           "MediatR": "12.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.2"
         },
         "runtime": {
           "Entities.dll": {}
+        }
+      },
+      "EntityFrameworkCore.GenericRepository.Nuget/8.0.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/GenericRepository.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.1.0"
+          }
         }
       },
       "MediatR/12.2.0": {
@@ -234,6 +246,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "EntityFrameworkCore.GenericRepository.Nuget/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M1itW2bRp28IeWZ1jH4Iw9HhMMNn/j1uvHjjXsQIl0mN2nKwF+pexQRgA65r6tih/SIu659r2T3qUVmxWA9Z2Q==",
+      "path": "entityframeworkcore.genericrepository.nuget/8.0.1",
+      "hashPath": "entityframeworkcore.genericrepository.nuget.8.0.1.nupkg.sha512"
     },
     "MediatR/12.2.0": {
       "type": "package",
