@@ -22,9 +22,18 @@ public class AppointmentsController(
 
     [HttpPost]
     [AllowAnonymous]
-    public async Task<IActionResult> CreateAppointment(CreateAppointmentDto request, CancellationToken cancellationToken)
+    public async Task<IActionResult> Create(CreateAppointmentDto request, CancellationToken cancellationToken)
     {
-        var response = await appointmentService.CreateAppointmentAsync(request, cancellationToken);
+        var response = await appointmentService.CreateAsync(request, cancellationToken);
+
+        return StatusCode(response.StatusCode, response);
+    }
+
+    [HttpPost]
+    [AllowAnonymous]
+    public async Task<IActionResult> Complete(CompleteAppointmentDto request, CancellationToken cancellationToken)
+    {
+        var response = await appointmentService.CompleteAsync(request, cancellationToken);
 
         return StatusCode(response.StatusCode, response);
     }

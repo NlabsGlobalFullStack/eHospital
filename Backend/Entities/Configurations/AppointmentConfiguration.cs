@@ -8,6 +8,6 @@ public sealed class AppointmentConfiguration : IEntityTypeConfiguration<Appointm
     public void Configure(EntityTypeBuilder<Appointment> builder)
     {
         builder.Property(p => p.Price).HasColumnType("money");
-        builder.HasQueryFilter(filter => !filter.Doctor!.IsDeleted || !filter.Patient!.IsDeleted);
+        builder.HasQueryFilter(f => (!f.Doctor!.IsDeleted || !f.Patient!.IsDeleted) && !f.IsItFinished);
     }
 }

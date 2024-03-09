@@ -2,6 +2,7 @@
 public static class EmailConstants
 {
     public static string Smtp = "smtp.office365.com";
+    public static string Email = "iyzico1@outlook.com";
     public static string Password = "Parola1!";
     public static int Port = 587;
     public static bool SSL = true;

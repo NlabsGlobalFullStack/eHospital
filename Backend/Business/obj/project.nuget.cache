@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Ra6+QRRvwk2CLeC+XZ2w8UJHg30EJ4Wd5v+pNIaspsmmhl6M3yIJj/TlSylxPrYKRV+0s67j/yirowKDmjAL1A==",
+  "dgSpecHash": "3w81NkeW+XnK/bVYr8YHE/FwLsSzUDKGMNH6hhh9hh4S2BkHQUkkmRqn9LWI20kRXn2C1OWkVPMU9MWsGZGfxQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\root\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\entityframeworkcore.genericrepository.nuget\\8.0.1\\entityframeworkcore.genericrepository.nuget.8.0.1.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\genericemailservice\\8.0.0\\genericemailservice.8.0.0.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\mailkit\\4.3.0\\mailkit.4.3.0.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",

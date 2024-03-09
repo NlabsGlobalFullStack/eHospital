@@ -268,3 +268,6 @@ D:\Projects\FullStack\eHospital\Backend\WebAPI\obj\Debug\net8.0\WebAPI.csproj.Up
 D:\Projects\FullStack\eHospital\Backend\WebAPI\obj\Debug\net8.0\WebAPI.genruntimeconfig.cache
 D:\Projects\FullStack\eHospital\Backend\WebAPI\obj\Debug\net8.0\ref\WebAPI.dll
 D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\GenericRepository.dll
+D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\FluentValidation.dll
+D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

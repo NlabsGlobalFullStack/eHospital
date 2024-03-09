@@ -7,7 +7,7 @@ internal sealed class DoctorDetailConfiguration : IEntityTypeConfiguration<Docto
 {
     public void Configure(EntityTypeBuilder<DoctorDetail> builder)
     {
-        builder.HasKey(k => k.UserId);
+        builder.HasKey(d => d.UserId);
         builder.Property(d => d.AppointmentPrice).HasColumnType("money");
     }
 }

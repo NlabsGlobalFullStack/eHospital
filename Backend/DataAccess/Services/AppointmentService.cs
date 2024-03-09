@@ -15,9 +15,30 @@ internal sealed class AppointmentService(
     IUnitOfWork unitOfWork,
     IMapper mapper) : IAppointmentService
 {
-    public async Task<Result<string>> CreateAppointmentAsync(CreateAppointmentDto request, CancellationToken cancellationToken)
+    public async Task<Result<string>> CompleteAsync(CompleteAppointmentDto request, CancellationToken cancellationToken)
     {
-        AppUser? doctor = await userManager.Users.Include(p => p.DoctorDetail).FirstOrDefaultAsync(p => p.Id == request.DoctorId);
+        var appointment = await appointmentRepository.GetByExpressionWithTrackingAsync(a => a.Id == request.AppointmentId, cancellationToken);
+        if (appointment is null)
+        {
+            return Result<string>.Failure("Appointment not found");
+        }
+
+        if (appointment.IsItFinished)
+        {
+            return Result<string>.Failure("Appointment already finsh. you cannot close again");
+        }
+
+        appointment.EpicrisisReport = request.EpicrisisReport;
+        appointment.IsItFinished = true;
+
+        await unitOfWork.SaveChangesAsync(cancellationToken);
+
+        return Result<string>.Succeed("Appointment is completed");
+    }
+
+    public async Task<Result<string>> CreateAsync(CreateAppointmentDto request, CancellationToken cancellationToken)
+    {
+        var doctor = await userManager.Users.Include(u => u.DoctorDetail).FirstOrDefaultAsync(u => u.Id == request.DoctorId);
         if (doctor is null || doctor.UserType is not UserType.Doctor)
         {
             return Result<string>.Failure("Doctor not found");
@@ -30,34 +51,47 @@ internal sealed class AppointmentService(
             return Result<string>.Failure("Doctor is not working that day");
         }
 
-        IQueryable<Appointment> appointments =
+        var appointments =
                  appointmentRepository
                 .GetWhere(p => p.DoctorId == request.DoctorId);
 
-        DateTime startDate = DateTime.SpecifyKind(request.StartDate, DateTimeKind.Utc);
-        DateTime endDate = DateTime.SpecifyKind(request.EndDate, DateTimeKind.Utc);
+        var startDate = DateTime.SpecifyKind(request.StartDate, DateTimeKind.Utc);
+        var endDate = DateTime.SpecifyKind(request.EndDate, DateTimeKind.Utc);
 
-        bool isDoctorHaveAppointment = true;
+        var isDoctorHaveAppointment = true;
 
-        isDoctorHaveAppointment = appointments.Any(p => p.StartDate <= startDate && p.EndDate > startDate);
+        isDoctorHaveAppointment = await appointments
+            .AnyAsync(a => 
+                (
+                    (a.StartDate < endDate && a.StartDate > startDate) || // Mevcut randevunun bitişi, diğer randevunun başlangıcıyla çakışıyor
+                    (a.EndDate > startDate && a.EndDate == endDate) || // Mevcut randevunun başlangıcı, diğer randevunun bitişiyle çakışıyor
+                    (a.StartDate >= startDate && a.EndDate <= endDate) || // Mevcut randevu, diğer randevu içinde tamamen
+                    (a.StartDate <= startDate && a.EndDate >= endDate) // Mevcut randevu, diğer randevuyu tamamen kapsıyor
+                )
+                ,cancellationToken
+            );
 
         if (isDoctorHaveAppointment)
         {
             return Result<string>.Failure("Doctor is not available in that time");
         }
-
-        isDoctorHaveAppointment = appointments.Any(p => p.StartDate < endDate && p.EndDate >= endDate);
-
-        if (isDoctorHaveAppointment)
-        {
-            return Result<string>.Failure("Doctor is not available in that time");
-        }
-
-        Appointment appointment = mapper.Map<Appointment>(request);
+        
+        var appointment = mapper.Map<Appointment>(request);
 
         await appointmentRepository.AddAsync(appointment, cancellationToken);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<string>.Succeed("Create appointment is succedded");
+    }
+
+    public async Task<Result<List<Appointment>>> GetAllByDoctorIdAsync(Guid DoctorId, CancellationToken cancellationToken)
+    {
+        var appointments = await appointmentRepository
+            .GetWhere(a => a.DoctorId == DoctorId)
+            .Include(a => a.Doctor)
+            .Include(a => a.Patient)
+            .OrderBy(a => a.StartDate).ToListAsync();
+
+        return Result<List<Appointment>>.Succeed(appointments);
     }
 }

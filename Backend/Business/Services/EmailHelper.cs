@@ -15,7 +15,7 @@ public static class EmailHelper
 
         EmailModel<Stream> emailModel = new(
             emailConfigurations,
-            "iyzico1@outlook.com",
+            EmailConstants.Email,
             new List<string> { email },
             subject,
             body,

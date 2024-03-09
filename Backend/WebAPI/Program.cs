@@ -1,9 +1,22 @@
-using System.Security.Claims;
+using Business;
 using DataAccess;
+using System.Security.Claims;
 using WebAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(cfr =>
+{
+    cfr.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+        policy.AllowAnyOrigin();
+        policy.AllowCredentials();
+    });
+});
+
+builder.Services.AddBusiness();
 builder.Services.AddDataAccess(builder.Configuration);
 
 builder.Services.AddControllers();

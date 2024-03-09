@@ -43,6 +43,13 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
         }
 
         var user = mapper.Map<AppUser>(request);
+        user.UserType = UserType.Patient;
+        int number = 1;
+        while(await userManager.Users.AnyAsync(u => u.UserName == user.UserName))
+        {
+            number++;
+            user.UserName += number;
+        }
 
         Random random = new();
 
@@ -67,6 +74,11 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
                     Specialty = (Specialty)request.Specialty,
                     WorkingDays = request.WorkingDays ?? new()
                 };
+            }
+
+            if (user.UserType == UserType.Nurse)
+            {
+                //
             }
         }
 
@@ -119,6 +131,17 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
         }
 
         return user;
+    }
+
+    public async Task<Result<List<AppUser>>> GetAllDoctorsAsync(CancellationToken cancellationToken)
+    {
+        var doctors = await userManager.Users
+            .Where(u => u.UserType == UserType.Doctor)
+            .Include(u => u.DoctorDetail)
+            .OrderBy(u => u.FirstName)
+            .ToListAsync(cancellationToken);
+
+        return Result<List<AppUser>>.Succeed(doctors);
     }
 }
 

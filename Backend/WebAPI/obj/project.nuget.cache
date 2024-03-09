@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rbNWlqKfEDuvgDWpYKY2oXdMzScE2rWc5A8YfnWoJDVBSYJK7DzM1BvxcmUE6X+I6ngaLhgW1xbolW5fNx3MVw==",
+  "dgSpecHash": "cEGqmBfa3Z5gwfmcMB2bpPFvZIjtVsZcEFiNjQvrYDttvmDLvuyfq3xLb0W+H8g1TM36dAox0NfaBFParkuqLQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,9 @@
     "C:\\Users\\root\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\efcore.namingconventions\\8.0.3\\efcore.namingconventions.8.0.3.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\entityframeworkcore.genericrepository.nuget\\8.0.1\\entityframeworkcore.genericrepository.nuget.8.0.1.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\root\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\genericemailservice\\8.0.0\\genericemailservice.8.0.0.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\root\\.nuget\\packages\\mailkit\\4.3.0\\mailkit.4.3.0.nupkg.sha512",
