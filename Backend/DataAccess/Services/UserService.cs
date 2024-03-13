@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Business.Services;
-using DataAccess.Extensions;
 using Entities.DTOs;
 using Entities.Enums;
 using Entities.Models;
@@ -13,7 +12,7 @@ namespace DataAccess.Services;
 internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapper) : IUserService
 {
 
-    public async Task<Result<string>> CreateUserAsync(RegisterRequestDto request, CancellationToken cancellationToken)
+    public async Task<Result<string>> CreateUserAsync(CreateUserDto request, CancellationToken cancellationToken)
     {
         if (request.Email is not null)
         {
@@ -60,13 +59,12 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
 
             if (!userManager.Users.Any(u => u.EmailConfirmCode == user.EmailConfirmCode))
             {
-                isEmailConfirmCodeExists = true;
+                isEmailConfirmCodeExists = false;
             }            
         }
 
         if (request.Specialty is not null)
         {
-            //eger kullanıcı tipi doktor ise doktor detail kısmında grekli kayıt işlemlerini yapıyoruz ilerleyen zamanlarda başka kontroller gerekebilir diye generic yapabilirim bu kısmı
             if (request.UserType == UserType.Doctor)
             {
                 user.DoctorDetail = new DoctorDetail()
@@ -100,12 +98,15 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
         return Result<string>.Failure(500, result.Errors.Select(s => s.Description).ToList());
     }
 
-    public async Task<Result<string>> CreatePatientAsync(CreatePatientDto request, CancellationToken cancellationToken)
+    public async Task<Result<Guid>> CreatePatientAsync(CreatePatientDto request, CancellationToken cancellationToken)
     {
-        var user = await FindPatientWithIdentityNumberAsync(request.IdentityNumber, cancellationToken);
-        if (user is null)
+        if (request.Email is not null)
         {
-            return Result<string>.Failure("IdentityNumber Not Found");
+            var ismailExists = await userManager.Users.AnyAsync(u => u.Email == request.Email);
+            if (ismailExists)
+            {
+                return Result<Guid>.Failure(StatusCodes.Status409Conflict, "Email already has taken");
+            }
         }
 
         if (request.IdentityNumber != "11111111111")
@@ -113,35 +114,42 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
             var identityNumberExists = await userManager.Users.AnyAsync(u => u.IdentityNumber == request.IdentityNumber);
             if (identityNumberExists)
             {
-                return Result<string>.Failure(StatusCodes.Status409Conflict, "IdentityNumber number already exists");
+                return Result<Guid>.Failure(StatusCodes.Status409Conflict, "IdentityNumber number already exists");
+            }
+        }
+        AppUser user = mapper.Map<AppUser>(request);
+        user.UserType = UserType.Patient;
+
+        int number = 0;
+        while (await userManager.Users.AnyAsync(u => u.UserName == user.UserName))
+        {
+            number++;
+            user.UserName += number;
+        }
+
+        Random random = new();
+
+        var isEmailConfirmCodeExists = true;
+        while (isEmailConfirmCodeExists)
+        {
+            user.EmailConfirmCode = random.Next(100000, 999999);
+
+            if (!userManager.Users.Any(u => u.EmailConfirmCode == user.EmailConfirmCode))
+            {
+                isEmailConfirmCodeExists = true;
             }
         }
 
-        var result = mapper.Map<AppUser>(user);
+        user.EmailConfirmCodeSendDate = DateTime.UtcNow;
 
-        return ("Patient creation successfull");
-    }
+        var result = await userManager.CreateAsync(user);
 
-    public async Task<Result<AppUser>> FindPatientWithIdentityNumberAsync(string identityNumber, CancellationToken cancellationToken)
-    {
-        var user = await userManager.FindByIdentityNumber(identityNumber, cancellationToken);
-        if (user is null)
+        if (!result.Succeeded)
         {
-            return Result<AppUser>.Failure(500, "Oser not found!");
+            return Result<Guid>.Failure(500, result.Errors.Select(e => e.Description).ToList());
         }
 
-        return user;
-    }
-
-    public async Task<Result<List<AppUser>>> GetAllDoctorsAsync(CancellationToken cancellationToken)
-    {
-        var doctors = await userManager.Users
-            .Where(u => u.UserType == UserType.Doctor)
-            .Include(u => u.DoctorDetail)
-            .OrderBy(u => u.FirstName)
-            .ToListAsync(cancellationToken);
-
-        return Result<List<AppUser>>.Succeed(doctors);
+        return Result<Guid>.Succeed(user.Id);
     }
 }
 

@@ -7,7 +7,7 @@ internal class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<RegisterRequestDto, AppUser>()
+        CreateMap<CreateUserDto, AppUser>()
             .ForMember(member => member.FirstName, options => options.MapFrom(src => src.FirstName.Trim()))
             .ForMember(member => member.LastName, options => options.MapFrom(src => src.LastName.Trim()))
             .ForMember(member => member.Email, options =>

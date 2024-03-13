@@ -5,14 +5,17 @@ using WebAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//builder.Services.AddDefaultCors();
+
 builder.Services.AddCors(cfr =>
 {
     cfr.AddDefaultPolicy(policy =>
     {
-        policy.AllowAnyHeader();
-        policy.AllowAnyMethod();
-        policy.AllowAnyOrigin();
-        policy.AllowCredentials();
+        policy
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials()
+        .SetIsOriginAllowed(policy => true);
     });
 });
 
@@ -35,6 +38,8 @@ if (app.Environment.IsDevelopment())
 ExtensionsMiddleware.CreateFirstUserAsync(app);
 //My Middleware
 
+
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Business.Services;
+using DataAccess.Extensions;
 using Entities.DTOs;
 using Entities.Enums;
 using Entities.Models;
@@ -13,6 +14,7 @@ internal sealed class AppointmentService(
     UserManager<AppUser> userManager,
     IAppointmentRepository appointmentRepository,
     IUnitOfWork unitOfWork,
+    IUserService userService,
     IMapper mapper) : IAppointmentService
 {
     public async Task<Result<string>> CompleteAsync(CompleteAppointmentDto request, CancellationToken cancellationToken)
@@ -63,10 +65,10 @@ internal sealed class AppointmentService(
         isDoctorHaveAppointment = await appointments
             .AnyAsync(a => 
                 (
-                    (a.StartDate < endDate && a.StartDate > startDate) || // Mevcut randevunun bitişi, diğer randevunun başlangıcıyla çakışıyor
-                    (a.EndDate > startDate && a.EndDate == endDate) || // Mevcut randevunun başlangıcı, diğer randevunun bitişiyle çakışıyor
-                    (a.StartDate >= startDate && a.EndDate <= endDate) || // Mevcut randevu, diğer randevu içinde tamamen
-                    (a.StartDate <= startDate && a.EndDate >= endDate) // Mevcut randevu, diğer randevuyu tamamen kapsıyor
+                    (a.StartDate < endDate && a.StartDate > startDate) ||
+                    (a.EndDate > startDate && a.EndDate == endDate) || 
+                    (a.StartDate >= startDate && a.EndDate <= endDate) || 
+                    (a.StartDate <= startDate && a.EndDate >= endDate)
                 )
                 ,cancellationToken
             );
@@ -84,7 +86,14 @@ internal sealed class AppointmentService(
         return Result<string>.Succeed("Create appointment is succedded");
     }
 
-    public async Task<Result<List<Appointment>>> GetAllByDoctorIdAsync(Guid DoctorId, CancellationToken cancellationToken)
+    public async Task<Result<AppUser?>> FindPatientbyIdentityNumberAsync(FindPatientDto request, CancellationToken cancellationToken)
+    {
+        var user = await userManager.FindByIdentityNumber(request.IdentityNumber, cancellationToken);
+
+        return user;
+    }
+    
+    public async Task<Result<List<Appointment?>>> GetAllByDoctorIdAsync(Guid DoctorId, CancellationToken cancellationToken)
     {
         var appointments = await appointmentRepository
             .GetWhere(a => a.DoctorId == DoctorId)
@@ -92,6 +101,18 @@ internal sealed class AppointmentService(
             .Include(a => a.Patient)
             .OrderBy(a => a.StartDate).ToListAsync();
 
-        return Result<List<Appointment>>.Succeed(appointments);
+        return Result<List<Appointment?>>.Succeed(appointments);
+    }
+
+    public async Task<Result<List<AppUser>>> GetAllDoctorsAsync(CancellationToken cancellationToken)
+    {
+        var doctors = await userManager
+            .Users
+            .Where(d => d.UserType == UserType.Doctor)
+            .Include(d => d.DoctorDetail)
+            .OrderBy(d => d.FirstName)
+            .ToListAsync(cancellationToken);
+
+        return Result<List<AppUser>>.Succeed(doctors);
     }
 }

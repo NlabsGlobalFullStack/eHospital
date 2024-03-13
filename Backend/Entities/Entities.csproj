@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.GenericRepository.Nuget" Version="8.0.1" />
     <PackageReference Include="MediatR" Version="12.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
   </ItemGroup>
 
 </Project>

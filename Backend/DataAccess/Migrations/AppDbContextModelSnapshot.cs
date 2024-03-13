@@ -18,7 +18,7 @@ namespace DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -217,10 +217,10 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entities.Models.DoctorDetail", b =>
                 {
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
-                        .HasColumnName("user_id");
+                        .HasColumnName("id");
 
                     b.Property<decimal>("AppointmentPrice")
                         .HasColumnType("money")
@@ -235,7 +235,7 @@ namespace DataAccess.Migrations
                         .HasColumnType("text[]")
                         .HasColumnName("working_days");
 
-                    b.HasKey("UserId")
+                    b.HasKey("Id")
                         .HasName("pk_doctor_details");
 
                     b.ToTable("doctor_details", (string)null);

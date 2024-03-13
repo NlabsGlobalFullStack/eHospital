@@ -1,9 +1,14 @@
 ﻿using Entities.Enums;
 using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models;
 public sealed class AppUser : IdentityUser<Guid>
 {
+    public AppUser()
+    {
+        Id = Guid.NewGuid();
+    }
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public string FullName => string.Join(" ", FirstName, LastName);
@@ -13,7 +18,7 @@ public sealed class AppUser : IdentityUser<Guid>
     public bool IsDeleted { get; set; } = false;
     public DateOnly? DateOfBirth { get; set; }
     public string? BloodType { get; set; }
-    public UserType UserType { get; set; } = UserType.User;
+    public UserType UserType { get; set; } = UserType.Patient;
 
     public int EmailConfirmCode { get; set; }
     public DateTime EmailConfirmCodeSendDate { get; set; }
@@ -21,6 +26,7 @@ public sealed class AppUser : IdentityUser<Guid>
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenExpires { get; set; }
 
+    [ForeignKey("DoctorDetail")]
     public Guid? DoctorDetailId { get; set; }
     public DoctorDetail? DoctorDetail { get; set; }
 

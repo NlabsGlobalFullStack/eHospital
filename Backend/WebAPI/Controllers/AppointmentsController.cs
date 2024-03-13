@@ -37,4 +37,31 @@ public class AppointmentsController(
 
         return StatusCode(response.StatusCode, response);
     }
+
+    [HttpGet]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetAllByDoctorId(Guid doctorId, CancellationToken cancellationToken)
+    {
+        var response = await appointmentService.GetAllByDoctorIdAsync(doctorId, cancellationToken);
+
+        return StatusCode(response.StatusCode, response);
+    }
+
+    [HttpPost]
+    [AllowAnonymous]
+    public async Task<IActionResult> FindPatientByIdentityNumber(FindPatientDto request, CancellationToken cancellationToken)
+    {
+        var response = await appointmentService.FindPatientbyIdentityNumberAsync(request, cancellationToken);
+
+        return StatusCode(response.StatusCode, response);
+    }
+
+    [HttpGet]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetAllDoctors(CancellationToken cancellationToken)
+    {
+        var response = await appointmentService.GetAllDoctorsAsync(cancellationToken);
+
+        return StatusCode(response.StatusCode, response);
+    }
 }

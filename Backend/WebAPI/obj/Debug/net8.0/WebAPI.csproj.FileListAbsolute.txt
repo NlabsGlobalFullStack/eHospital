@@ -271,3 +271,4 @@ D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\GenericRepositor
 D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\FluentValidation.dll
 D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects\FullStack\eHospital\Backend\WebAPI\bin\Debug\net8.0\DefaultCorsPolicyNugetPackage.dll

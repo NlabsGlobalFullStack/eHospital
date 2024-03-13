@@ -1,7 +1,7 @@
 ﻿using Entities.Enums;
 
 namespace Entities.DTOs;
-public sealed record RegisterRequestDto(
+public sealed record CreateUserDto(
     string FirstName,
     string LastName,
     string IdentityNumber = "11111111111",
@@ -9,10 +9,10 @@ public sealed record RegisterRequestDto(
     string? Email = null,
     string? UserName = null,
     string? Password = null,
-    DateOnly? DateOfBirth = null,
+    string? PhoneNumber = null,
+    //DateOnly? DateOfBirth = null,
     string? BloodType = null,
     UserType UserType = UserType.User,
     Specialty? Specialty = null,
-    List<string>? WorkingDays = null,
-    string? PhoneNumber = null
+    List<string>? WorkingDays = null
 );

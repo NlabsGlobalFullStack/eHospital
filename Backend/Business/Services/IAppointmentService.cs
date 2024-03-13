@@ -7,6 +7,8 @@ public interface IAppointmentService
 {
     Task<Result<string>> CreateAsync(CreateAppointmentDto request, CancellationToken cancellationToken);
     Task<Result<string>> CompleteAsync(CompleteAppointmentDto request, CancellationToken cancellationToken);
+    Task<Result<List<Appointment?>>> GetAllByDoctorIdAsync(Guid DoctorId, CancellationToken cancellationToken);
+    Task<Result<AppUser?>> FindPatientbyIdentityNumberAsync(FindPatientDto request, CancellationToken cancellationToken);
 
-    Task<Result<List<Appointment>>> GetAllByDoctorIdAsync(Guid DoctorId, CancellationToken cancellationToken);
+    Task<Result<List<AppUser>>> GetAllDoctorsAsync(CancellationToken cancellationToken);
 }

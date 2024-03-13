@@ -6,7 +6,7 @@ public sealed record CreatePatientDto(
     string IdentityNumber = "11111111111",
     string FullAddress = "",
     string? Email = null,
+    string? PhoneNumber = null,
     DateOnly? DateOfBirth = null,
-    string? BloodType = null,
-    string? PhoneNumber = null
+    string? BloodType = null
 );
