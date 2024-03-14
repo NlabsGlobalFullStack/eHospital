@@ -1,7 +1,7 @@
 ﻿namespace Entities.DTOs;
 public sealed record CreateAppointmentDto(
     Guid DoctorId,
-    Guid PatientId,
+    Guid? PatientId,
     string FirstName,
     string LastName,
     string FullAddress,

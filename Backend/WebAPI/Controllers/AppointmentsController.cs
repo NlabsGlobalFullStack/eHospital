@@ -64,4 +64,13 @@ public class AppointmentsController(
 
         return StatusCode(response.StatusCode, response);
     }
+
+    [HttpGet]
+    [AllowAnonymous]
+    public async Task<IActionResult> DeleteByAppointmentId(Guid appointmentId, CancellationToken cancellationToken)
+    {
+        var response = await appointmentService.DeleteByAppointmentAsync(appointmentId, cancellationToken);
+
+        return StatusCode(response.StatusCode, response);
+    }
 }

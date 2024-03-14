@@ -1,6 +1,6 @@
 ﻿namespace Entities.DTOs;
 public sealed record LoginRequestDto(
-    string UserNameOrEmail,
+    string IdentityNumberOrUserNameOrEmail,
     string Password,
     bool rememberMe = false
 );

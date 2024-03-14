@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "D:\\Projects\\FullStack\\eHospital\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|d:\\projects\\fullstack\\ehospital\\backend\\dataaccess\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B904984E-8AB2-47F7-AD70-C3B7456B19FB}|Business\\Business.csproj|d:\\projects\\fullstack\\ehospital\\backend\\business\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B904984E-8AB2-47F7-AD70-C3B7456B19FB}|Business\\Business.csproj|solutionrelative:business\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B904984E-8AB2-47F7-AD70-C3B7456B19FB}|Business\\Business.csproj|d:\\projects\\fullstack\\ehospital\\backend\\business\\services\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B904984E-8AB2-47F7-AD70-C3B7456B19FB}|Business\\Business.csproj|solutionrelative:business\\services\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|d:\\projects\\fullstack\\ehospital\\backend\\dataaccess\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A938DA29-827B-4EFD-8FD3-3D7741D7FB5D}|Entities\\Entities.csproj|d:\\projects\\fullstack\\ehospital\\backend\\entities\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A938DA29-827B-4EFD-8FD3-3D7741D7FB5D}|Entities\\Entities.csproj|solutionrelative:entities\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A938DA29-827B-4EFD-8FD3-3D7741D7FB5D}|Entities\\Entities.csproj|d:\\projects\\fullstack\\ehospital\\backend\\entities\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A938DA29-827B-4EFD-8FD3-3D7741D7FB5D}|Entities\\Entities.csproj|solutionrelative:entities\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{85350BE0-9281-437C-A5F2-335AC0DBC151}|WebAPI\\WebAPI.csproj|d:\\projects\\fullstack\\ehospital\\backend\\webapi\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85350BE0-9281-437C-A5F2-335AC0DBC151}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85350BE0-9281-437C-A5F2-335AC0DBC151}|WebAPI\\WebAPI.csproj|d:\\projects\\fullstack\\ehospital\\backend\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85350BE0-9281-437C-A5F2-335AC0DBC151}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|d:\\projects\\fullstack\\ehospital\\backend\\dataaccess\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B39ED30E-14A4-4ACA-80B5-7D93198CC902}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A938DA29-827B-4EFD-8FD3-3D7741D7FB5D}|Entities\\Entities.csproj|d:\\projects\\fullstack\\ehospital\\backend\\entities\\dtos\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A938DA29-827B-4EFD-8FD3-3D7741D7FB5D}|Entities\\Entities.csproj|solutionrelative:entities\\dtos\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,8 +30,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 186,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Services\\AuthService.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\Services\\AuthService.cs",
+              "RelativeToolTip": "DataAccess\\Services\\AuthService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T17:54:12.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Business\\Services\\IAuthService.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Services\\IAuthService.cs",
+              "RelativeToolTip": "Business\\Services\\IAuthService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T17:54:05.703Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -86,93 +104,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Models\\AppUser.cs",
-              "RelativeDocumentMoniker": "Entities\\Models\\AppUser.cs",
-              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Models\\AppUser.cs",
-              "RelativeToolTip": "Entities\\Models\\AppUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T18:29:10.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Appointment.cs",
-              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Models\\Appointment.cs",
-              "RelativeDocumentMoniker": "Entities\\Models\\Appointment.cs",
-              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\Models\\Appointment.cs",
-              "RelativeToolTip": "Entities\\Models\\Appointment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T18:29:03.233Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Program.cs",
-              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\Program.cs",
-              "RelativeToolTip": "WebAPI\\Program.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T18:07:53.316Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppointmentService.cs",
-              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\Services\\AppointmentService.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Services\\AppointmentService.cs",
-              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\Services\\AppointmentService.cs",
-              "RelativeToolTip": "DataAccess\\Services\\AppointmentService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAnwFAAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T18:01:12.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Services\\UserService.cs",
-              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\Services\\UserService.cs",
-              "RelativeToolTip": "DataAccess\\Services\\UserService.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAowEwAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T17:21:10.932Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "AppointmentsController.cs",
               "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\Controllers\\AppointmentsController.cs",
               "RelativeDocumentMoniker": "WebAPI\\Controllers\\AppointmentsController.cs",
               "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\WebAPI\\Controllers\\AppointmentsController.cs",
               "RelativeToolTip": "WebAPI\\Controllers\\AppointmentsController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBgAAABAAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAA0wEIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T17:13:35.448Z",
+              "WhenOpened": "2024-03-14T17:32:29.466Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateUserDto.cs",
-              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\DTOs\\CreateUserDto.cs",
-              "RelativeDocumentMoniker": "Entities\\DTOs\\CreateUserDto.cs",
-              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\Entities\\DTOs\\CreateUserDto.cs",
-              "RelativeToolTip": "Entities\\DTOs\\CreateUserDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAkAAAA",
+              "DocumentIndex": 3,
+              "Title": "AppointmentService.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\Services\\AppointmentService.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Services\\AppointmentService.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\DataAccess\\Services\\AppointmentService.cs",
+              "RelativeToolTip": "DataAccess\\Services\\AppointmentService.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAIwIoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T17:12:38.145Z",
+              "WhenOpened": "2024-03-14T17:23:50.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IAppointmentService.cs",
+              "DocumentMoniker": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Services\\IAppointmentService.cs",
+              "RelativeDocumentMoniker": "Business\\Services\\IAppointmentService.cs",
+              "ToolTip": "D:\\Projects\\FullStack\\eHospital\\Backend\\Business\\Services\\IAppointmentService.cs",
+              "RelativeToolTip": "Business\\Services\\IAppointmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T17:23:02.113Z",
               "EditorCaption": ""
             }
           ]

@@ -48,11 +48,12 @@ internal class AuthService(
 
     public async Task<Result<LoginResponseDto>> LoginAsync(LoginRequestDto request, CancellationToken cancellationToken)
     {
-        string userNameOrEmail = request.UserNameOrEmail.ToUpper();
+        string identityNumberOrUserNameOrEmail = request.IdentityNumberOrUserNameOrEmail.ToUpper();
         AppUser? user = await userManager.Users
             .FirstOrDefaultAsync(p =>
-            p.NormalizedUserName == userNameOrEmail ||
-            p.NormalizedEmail == userNameOrEmail,
+            p.NormalizedUserName == identityNumberOrUserNameOrEmail ||
+            p.NormalizedEmail == identityNumberOrUserNameOrEmail ||
+            p.IdentityNumber == identityNumberOrUserNameOrEmail,
             cancellationToken);
 
         if (user is null)
@@ -60,7 +61,7 @@ internal class AuthService(
             return (500, "User not found");
         }
 
-        SignInResult signInResult = await signInManager.CheckPasswordSignInAsync(user, request.Password, true);
+        var signInResult = await signInManager.CheckPasswordSignInAsync(user, request.Password, true);
 
         if (signInResult.IsLockedOut)
         {

@@ -80,12 +80,28 @@ internal sealed class AppointmentService(
         
         var appointment = mapper.Map<Appointment>(request);
 
+        if (request.PatientId is null)
+        {
+            CreatePatientDto createPatientDto = new(
+                request.FirstName,
+                request.LastName,
+                request.IdentityNumber,
+                request.FullAddress,
+                request.Email,
+                request.PhoneNumber,
+                request.DateOfBirth,
+                request.BloodType);
+
+            var createPatientResponse = await userService.CreatePatientAsync(createPatientDto, cancellationToken);
+
+            appointment.PatientId = createPatientResponse.Data;
+        }
+
         await appointmentRepository.AddAsync(appointment, cancellationToken);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<string>.Succeed("Create appointment is succedded");
     }
-
     public async Task<Result<AppUser?>> FindPatientbyIdentityNumberAsync(FindPatientDto request, CancellationToken cancellationToken)
     {
         var user = await userManager.FindByIdentityNumber(request.IdentityNumber, cancellationToken);
@@ -114,5 +130,18 @@ internal sealed class AppointmentService(
             .ToListAsync(cancellationToken);
 
         return Result<List<AppUser>>.Succeed(doctors);
+    }
+
+    public async Task<Result<string>> DeleteByAppointmentAsync(Guid appointmentId, CancellationToken cancellationToken)
+    {
+        var appointment = await appointmentRepository.GetByExpressionAsync(a => a.Id == appointmentId, cancellationToken);
+        if (appointment is null)
+        {
+            return Result<string>.Failure("Appointment not found");
+        }
+
+        await appointmentRepository.DeleteByIdAsync(appointment.Id.ToString());
+        await unitOfWork.SaveChangesAsync(cancellationToken);
+        return Result<string>.Succeed("Appointment is deleted successfully");
     }
 }
