@@ -1,5 +1,5 @@
-
-
+<div class="container">
+<app-navbar></app-navbar>
 <div class="form-group mt-2">
     <select (change)="getDoctorAppointments()" class="form-control" [(ngModel)]="selectedDoctorId">
         <option value="">Select Doctor...</option>
@@ -22,6 +22,7 @@
         [startDayHour]="9"
         [height]="730"    
         (onAppointmentFormOpening)="onAppointmentFormOpening($event)"
+        (onAppointmentDeleting)="onAppointmentDeleting($event)"
       >
       </dx-scheduler>
     </div>
@@ -100,3 +101,5 @@
       </div>
     </div>
   </div>
+  <app-footer></app-footer>
+</div>

@@ -132,15 +132,15 @@ internal sealed class AppointmentService(
         return Result<List<AppUser>>.Succeed(doctors);
     }
 
-    public async Task<Result<string>> DeleteByAppointmentAsync(Guid appointmentId, CancellationToken cancellationToken)
+    public async Task<Result<string>> DeleteByIdAsync(Guid id, CancellationToken cancellationToken)
     {
-        var appointment = await appointmentRepository.GetByExpressionAsync(a => a.Id == appointmentId, cancellationToken);
+        var appointment = await appointmentRepository.GetByExpressionAsync(a => a.Id == id, cancellationToken);
         if (appointment is null)
         {
             return Result<string>.Failure("Appointment not found");
         }
 
-        await appointmentRepository.DeleteByIdAsync(appointment.Id.ToString());
+        appointmentRepository.Delete(appointment);
         await unitOfWork.SaveChangesAsync(cancellationToken);
         return Result<string>.Succeed("Appointment is deleted successfully");
     }

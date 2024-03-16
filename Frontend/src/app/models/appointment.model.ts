@@ -10,5 +10,5 @@ export class AppointmentModel{
     endDate: string  ="";
     epicrisisReport: string = "";
     price: number = 0;
-    isItFinish: boolean = false;    
+    isItFinish: boolean = false;
 }

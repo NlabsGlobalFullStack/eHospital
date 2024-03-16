@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    width: auto;
+    height: auto;
+    background-color: rgb(178 233 221) !important;
+}

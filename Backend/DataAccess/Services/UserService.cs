@@ -11,7 +11,6 @@ using TS.Result;
 namespace DataAccess.Services;
 internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapper) : IUserService
 {
-
     public async Task<Result<string>> CreateUserAsync(CreateUserDto request, CancellationToken cancellationToken)
     {
         if (request.Email is not null)
@@ -97,7 +96,6 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
 
         return Result<string>.Failure(500, result.Errors.Select(s => s.Description).ToList());
     }
-
     public async Task<Result<Guid>> CreatePatientAsync(CreatePatientDto request, CancellationToken cancellationToken)
     {
         if (request.Email is not null)
@@ -136,7 +134,7 @@ internal sealed class UserService(UserManager<AppUser> userManager, IMapper mapp
 
             if (!userManager.Users.Any(u => u.EmailConfirmCode == user.EmailConfirmCode))
             {
-                isEmailConfirmCodeExists = true;
+                isEmailConfirmCodeExists = false;
             }
         }
 

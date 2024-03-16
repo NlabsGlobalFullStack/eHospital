@@ -35,3 +35,4 @@ export enum Specialty
     Psikiyatri,
     Goz
 }
+

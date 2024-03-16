@@ -7,3 +7,4 @@ public enum UserType
     Patient = 3,
     Admin = 4
 }
+    

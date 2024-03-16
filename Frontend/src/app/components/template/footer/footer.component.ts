@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NAV_TITLE } from '../../../constants/constants';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  company: string = NAV_TITLE;
 }

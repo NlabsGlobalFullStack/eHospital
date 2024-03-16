@@ -1,23 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { DxSchedulerModule } from 'devextreme-angular';
-import { UserModel } from '../../models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule, NgForm } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+import { DxSchedulerModule } from 'devextreme-angular';
+import { FormValidateDirective } from 'form-validate-angular';
+
+import { UserModel } from '../../models/user.model';
 import { AppointmentModel } from '../../models/appointment.model';
 import { ResultModel } from '../../models/result.model';
-import { FormValidateDirective } from 'form-validate-angular';
 import { AppointmentDataModel } from '../../models/appointment-data.model';
-import { CommonModule } from '@angular/common';
+import { API_URL, PAGE_TITLE } from '../../constants/constants';
+import { NavbarComponent } from '../template/navbar/navbar.component';
+import { FooterComponent } from '../template/footer/footer.component';
 declare const $: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, DxSchedulerModule, FormsModule, FormValidateDirective],
+  imports: [NavbarComponent, FooterComponent, CommonModule, DxSchedulerModule, FormsModule, FormValidateDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  title: string = PAGE_TITLE + "Home Page";
   appointmentsData: any[] = [];
   selectedDoctorId: string = "";
   currentDate: Date = new Date();
@@ -25,6 +31,8 @@ export class HomeComponent implements OnInit {
 
   addModel: AppointmentModel = new AppointmentModel();
   appointmentData: AppointmentDataModel = new AppointmentDataModel();
+
+  loginUserIsDoctor: boolean = false;
 
   constructor(
     private http: HttpClient
@@ -35,7 +43,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAllDoctors() {
-    this.http.get("https://localhost:7149/api/Appointments/GetAllDoctors").subscribe((res: any) => {
+    this.http.get(`${API_URL}appointments/getAllDoctors`).subscribe((res: any) => {
       this.doctors = res.data;
     })
   }
@@ -43,12 +51,10 @@ export class HomeComponent implements OnInit {
   getDoctorAppointments() {
     if (this.selectedDoctorId === "") return;
 
-    this.http.get(`https://localhost:7149/api/Appointments/GetAllByDoctorId?doctorId=${this.selectedDoctorId}`).subscribe((res: any) => {
-
-      console.log(res.data);
-
+    this.http.get(`${API_URL}appointments/getAllByDoctorId?doctorId=${this.selectedDoctorId}`).subscribe((res: any) => {
       const data = res.data.map((val: any, i: number) => {
         return {
+          id: val.id,
           text: val.patient.fullName,
           startDate: new Date(val.startDate),
           endDate: new Date(val.endDate)
@@ -60,7 +66,6 @@ export class HomeComponent implements OnInit {
   }
 
   onAppointmentFormOpening(event: any) {
-    console.log(event);
     this.appointmentData = event.appointmentData;
     const doctorName = this.doctors.find(p => p.id == this.selectedDoctorId)?.fullName;
     const specialtyName = this.doctors.find(p => p.id == this.selectedDoctorId)?.doctorDetail?.specialtyName;
@@ -89,7 +94,7 @@ export class HomeComponent implements OnInit {
         "price": this.doctors.find(p => p.id == this.addModel.doctorId)?.doctorDetail?.price
       };
 
-      this.http.post("https://localhost:7149/api/Appointments/Create", data).subscribe(res => {
+      this.http.post(`${API_URL}appointments/create`, data).subscribe(res => {
         $("#addAppointmentModal").modal('hide');
         this.getDoctorAppointments();
         this.addModel = new AppointmentModel();
@@ -100,11 +105,24 @@ export class HomeComponent implements OnInit {
   findPatientByIdentityNumber() {
     if (this.addModel.patient.identityNumber.length < 11) return;
     this.http.post<ResultModel<UserModel>>
-      (`https://localhost:7149/api/Appointments/FindPatientByIdentityNumber`,
+      (`${API_URL}Appointments/findPatientByIdentityNumber`,
         { identityNumber: this.addModel.patient.identityNumber }).subscribe((res) => {
           if (res.data !== undefined && res.data !== null) {
             this.addModel.patient = res.data;
           }
         });
+  }
+
+  onAppointmentDeleting(event: any) {
+    console.log(event);
+    
+    event.cancel = true;
+    const result = confirm("You want to delete this appointment?");
+    if (result) {
+      const id = event.appointmentData?.id;
+      this.http.get(`${API_URL}appointments/deleteBytId?id=${id}`).subscribe(res => {
+        this.getDoctorAppointments();
+      });
+    }
   }
 }

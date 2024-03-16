@@ -10,5 +10,5 @@ public interface IAppointmentService
     Task<Result<List<Appointment?>>> GetAllByDoctorIdAsync(Guid DoctorId, CancellationToken cancellationToken);
     Task<Result<AppUser?>> FindPatientbyIdentityNumberAsync(FindPatientDto request, CancellationToken cancellationToken);
     Task<Result<List<AppUser>>> GetAllDoctorsAsync(CancellationToken cancellationToken);
-    Task<Result<string>> DeleteByAppointmentAsync(Guid appointmentId, CancellationToken cancellationToken);
+    Task<Result<string>> DeleteByIdAsync(Guid id, CancellationToken cancellationToken);
 }
